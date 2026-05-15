@@ -29,15 +29,15 @@
           <p class="bg-primary">Placeholder 3</p>
           <p class="bg-primary">Placeholder 4</p>
         </div>
-        <button id="anterior" onClick="paginaAnterior()">Página anterior</button>
-        <button id="siguiente" onClick="paginaSiguiente()">Página siguiente</button>
+        <button id="anterior" onClick="ordenarPorNumero()">Por Numero</button>
+        <button id="siguiente" onClick="ordenarPorPalo()">Por Palo</button>
       </section>
     </main>
 
     <script src="carta.js"></script>
     <script src="main.js"></script>
     <script>
-        traerCartas(6).then( () => {actualizarCartasHTML();});
+        cargarGuardadas();
     </script>
   </body>
 </html>

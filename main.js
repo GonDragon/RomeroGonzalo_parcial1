@@ -11,6 +11,9 @@ const paginador = {
     }
 }
 
+const valores = ['ACE','2','3','4','5','6','7','8','9','10','JACK','QUEEN','KING'];
+const palos = ['HEARTS','DIAMONDS','SPADES','CLUBS'];
+
 function limpiarCartas(){
     const contenedorCartas = document.getElementById("cartas");
     contenedorCartas.innerHTML = "";
@@ -64,14 +67,38 @@ function paginaAnterior(){
     console.log(`indice ${paginador.index}`);
 }
 
-function guardarCarta(indice){
-    console.log(indice);
+function cargarGuardadas() {
+    limpiarCartas();
+    const contenedorCartas = document.getElementById("cartas");
+
+    const cartasGuardadasString = localStorage.getItem('cartas');
+    let cartasGuardadas = cartasGuardadasString ? JSON.parse(cartasGuardadasString) : [];
+    
+    for (let index = 0; index < cartasGuardadas.length; index++) {
+        agregarCarta(cartasGuardadas[index]);        
+    }
+
+    actualizarCartasHTML();
 }
 
+function ordenarPorNumero() {
+    let paginaActual= paginador.paginas[paginador.index];
 
-/* Codigo Suelto Desde Aca */
-console.log("Inicio del codigo suelto");
 
-traerCartas(6).then( () => {actualizarCartasHTML();});
+    paginaActual.sort((a,b) => {
+        return valores.indexOf(a.value) - valores.indexOf(b.value)
+    });
 
-console.log("Fin del codigo suelto");
+    actualizarCartasHTML();
+}
+
+function ordenarPorPalo() {
+    let paginaActual= paginador.paginas[paginador.index];
+
+
+    paginaActual.sort((a,b) => {
+        return palos.indexOf(a.suit) - palos.indexOf(b.suit)
+    });
+
+    actualizarCartasHTML();
+}

@@ -40,7 +40,6 @@ function actualizarCartasHTML(){
     const contenedorCartas = document.getElementById("cartas");
     let paginaActual = paginador.paginas[paginador.index];
     for (let index = 0; index < paginaActual.length -1; index++) {
-        console.log("loop");
         const carta = paginaActual[index];      
         const cartaHtml = carta.createHtmlElement();
         contenedorCartas.appendChild(cartaHtml);
@@ -63,6 +62,10 @@ function paginaAnterior(){
     paginador.index--;
     actualizarCartasHTML();
     console.log(`indice ${paginador.index}`);
+}
+
+function guardarCarta(indice){
+    console.log(indice);
 }
 
 

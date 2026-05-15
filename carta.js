@@ -26,8 +26,11 @@ class Carta {
 
     contenedor.innerHTML = `
       <h3>${this.code}</h3>
+      <a href="${this.imagen}" target="_blank">
       <img src="${this.imagen}" alt="${this.nombre}" style="max-width: 100%;">
+      </a>
       <p><span>${this.value}</span> of <span>${this.suit}</span></p>
+      <a href="#" class="btn btn-primary" onClick="guardarCarta()">Guardar</a>
     `;
 
     return contenedor;

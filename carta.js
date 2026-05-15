@@ -16,7 +16,7 @@ class Carta {
       data.code,
       data.value,
       data.suit,
-      data.imagen
+      data.image
     );
   }
 
@@ -26,9 +26,8 @@ class Carta {
 
     contenedor.innerHTML = `
       <h3>${this.code}</h3>
-      <img src="${this.urlImagen}" alt="${this.nombre}" style="max-width: 100%;">
-      <p>${this.suit}</p>
-      <p>${this.value}</p>
+      <img src="${this.imagen}" alt="${this.nombre}" style="max-width: 100%;">
+      <p><span>${this.value}</span> of <span>${this.suit}</span></p>
     `;
 
     return contenedor;

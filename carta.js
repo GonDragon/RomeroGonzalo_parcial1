@@ -35,13 +35,19 @@ class Carta {
     contenedor.classList.add('carta');
 
     contenedor.innerHTML = `
-      <h3>${this.code}</h3>
-      <a href="${this.image}" target="_blank">
-      <img src="${this.image}" alt="${this.nombre}" style="max-width: 100%;">
-      </a>
-      <p><span>${this.value}</span> of <span>${this.suit}</span></p>
-      <a href="#" class="btn btn-primary btn-guardar">Guardar</a>
-    `;
+  <div class="card h-100 shadow-sm pt-2 px-3">
+    <img src="${this.image}" class="card-img-top" alt="${this.nombre}">
+    <div class="card-body d-flex flex-column justify-content-between">
+      <div>
+        <h5 class="card-title text-muted small">${this.code}</h5>
+        <p class="card-text fs-5">
+          <strong>${this.value}</strong> de <span>${this.suit}</span>
+        </p>
+      </div>
+      <a href="#" class="btn btn-primary btn-guardar w-100">Guardar</a>
+    </div>
+  </div>
+`;
 
     const botonGuardar = contenedor.querySelector('.btn-guardar');
 

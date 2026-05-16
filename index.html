@@ -14,13 +14,13 @@
   </head>
   <body>
     <main class="m-2">
-      <header>
+      <header class="text-center bg-primary text-light rounded-top">
         <h1>Inicio</h1>
         <h3>Simulacro PP - Programación III - 2024</h3>
       </header>
-      <nav id="panel-izquierda">
-        <a href="./index.html">Inicio</a>
-        <a href="./guardados.html">Guardados</a>
+      <nav id="panel-izquierda" class="d-flex flex-column bg-light p-3 shadow-sm">
+        <a href="./index.html" class="btn btn-outline-primary text-start mb-2 py-2 px-3">Inicio</a>
+        <a href="./guardados.html" class="btn btn-outline-primary text-start py-2 px-3">Guardados</a>
       </nav>
       <section id="principal">
         <div id="cartas">
@@ -29,8 +29,10 @@
           <p class="bg-primary">Placeholder 3</p>
           <p class="bg-primary">Placeholder 4</p>
         </div>
-        <button id="anterior" onClick="paginaAnterior()">Página anterior</button>
-        <button id="siguiente" onClick="paginaSiguiente()">Página siguiente</button>
+        <div class="bg-primary d-flex justify-content-center align-items-center p-3 gap-2">
+            <button id="anterior" class="btn btn-light text-primary" onClick="paginaAnterior()">Página anterior</button>
+            <button id="siguiente" class="btn btn-light text-primary" onClick="paginaSiguiente()">Página siguiente</button>
+        </div>
       </section>
     </main>
 

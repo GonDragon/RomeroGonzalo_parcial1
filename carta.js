@@ -36,11 +36,13 @@ class Carta {
 
     contenedor.innerHTML = `
   <div class="card h-100 shadow-sm pt-2 px-3">
+    <a href="${this.image}" target="_blank">
     <img src="${this.image}" class="card-img-top" alt="${this.nombre}">
+    </a>
     <div class="card-body d-flex flex-column justify-content-between">
       <div>
         <h5 class="card-title text-muted small">${this.code}</h5>
-        <p class="card-text fs-5">
+        <p class="card-text">
           <strong>${this.value}</strong> de <span>${this.suit}</span>
         </p>
       </div>
